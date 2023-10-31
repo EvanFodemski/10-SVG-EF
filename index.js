@@ -53,7 +53,7 @@ const questions = [
 function writeToFile(fileName, data){
     fs.writeFile(fileName, data, function(err){
         if (err) throw (err);
-        console.log("SVG file generated successfully.");
+        console.log("Generated logo.svg");
     })
 
 }
@@ -63,7 +63,7 @@ function writeToFile(fileName, data){
 function init() {
     inquirer.prompt(questions).then((answers) => {
         const generatedSVGContent = generateSVG(answers);
-        const fileName = "YourLogo.svg";
+        const fileName = "Logo.svg";
         writeToFile(fileName,generatedSVGContent)
     }).catch((err) => {
         console.error("Error occurred:", err);
